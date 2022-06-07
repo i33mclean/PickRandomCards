@@ -13,7 +13,9 @@ namespace PickRandomCards
         {
             Initalize();
 
-            while (true)
+            bool keepGoing = true;
+
+            while (keepGoing == true)
             {
                 Console.WriteLine("Play Again - Yes or No");
 
@@ -23,7 +25,8 @@ namespace PickRandomCards
                 }
                 else
                 {
-                    break;
+                    Console.WriteLine("Thanks for playing");
+                    keepGoing = false;
                 }
             }
         }
