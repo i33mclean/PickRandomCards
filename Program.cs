@@ -11,15 +11,34 @@ namespace PickRandomCards
 
         static void Main(string[] args)
         {
+            Initalize();
+
+            while (true)
+            {
+                Console.WriteLine("Play Again - Yes or No");
+
+                if(Console.ReadLine() == "Yes")
+                {
+                    Initalize();
+                }
+                else
+                {
+                    break;
+                }
+            }
+        }
+
+        private static void Initalize()
+        {
             Console.Write("Enter the number of cards to pick: ");
 
             string line = Console.ReadLine();
 
             int.TryParse(line, out int numberOfCards);
 
-            if(int.TryParse(line, out numberOfCards))
+            if (int.TryParse(line, out numberOfCards))
             {
-                string [] cards = CardPicker.PickSomeCards(numberOfCards);
+                string[] cards = CardPicker.PickSomeCards(numberOfCards);
 
                 foreach (string card in CardPicker.PickSomeCards(numberOfCards))
                 {
@@ -30,6 +49,6 @@ namespace PickRandomCards
             {
                 Console.WriteLine("The number was not valid");
             }
-        }   
+        }
     }
 }
